@@ -1,0 +1,57 @@
+.background {
+    /* background-image: url("/assets/"); */
+    background-color: #ffc16b;
+    /* height: 100vh; */
+    border: 5px solid pink;
+}
+
+/* need to make this scale according to screen-size without getting too small */
+.logo {
+    width: 55em;
+    height: auto;
+    border: 5px solid black;
+}
+
+/* ========= Will DELETE these later ========== */
+
+.test {
+    border: 5px solid blue;
+}
+
+.test2 {
+    border: 5px solid red;
+}
+
+.test4 {
+    border: 5px solid green;
+    padding: 40px;
+}
+
+/* =========================== */
+
+.dynamic-content-wrapper {
+    padding: 50px;
+}
+
+.footer-bg {
+    background: #471202;
+    height: 200px;
+    /* width: 100%; */
+}
+
+/* ============= brought-to-you-by ============== */
+
+.footer-img-wrapper {
+    border: 5px solid white;
+    height: 100%;
+    /* width: 100%; */
+
+}
+
+.btyb {
+    padding-top: 35px;
+    border: 5px solid pink;
+    width: 450px;
+    
+
+}

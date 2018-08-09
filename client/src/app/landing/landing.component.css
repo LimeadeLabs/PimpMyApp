@@ -1,0 +1,43 @@
+.landing-wrapper {
+    height: 100%;
+}
+
+.btn-wrapper{
+    padding-top: 35px;
+}
+
+.btn-style {
+    width: 40%;
+    height: 50px;
+    background: #471202;
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+
+.app-screen{
+    width: 350px;
+    margin-right: auto;
+    margin-left: 15%;
+}
+
+.test3 {
+    border: 5px solid purple;
+}
+
+.text-wrapper {
+    border: 5px solid blue;
+    /* margin-top: 25px; */
+    padding: 20px;
+}
+
+h3{
+    padding-top: 80px;
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #ff630f;
+}
