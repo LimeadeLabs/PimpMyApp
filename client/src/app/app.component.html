@@ -6,8 +6,9 @@
         <div class="col-lg-1 col-sm-12">
           <app-nav></app-nav>
         </div>
-        <div class="col-lg-11 col-sm-12 test4">
-          <router-outlet></router-outlet>
+        <div class="col-lg-11 col-sm-12 test4 routeContainer" [@routeAnimation]='getDepth(myOutlet)' >
+          <router-outlet #myOutlet="outlet"></router-outlet>
+          <button>test</button>
         </div>
       </div>
     </div>

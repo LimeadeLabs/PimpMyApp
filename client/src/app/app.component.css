@@ -55,3 +55,13 @@
     
 
 }
+
+.routeContainer {
+    position: relative;
+    background: blue;
+}
+/* sets child elem to block */
+.routeContainer >* {
+    display: block;
+}
+
