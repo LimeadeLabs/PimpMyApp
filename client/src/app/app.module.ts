@@ -8,25 +8,12 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { NavComponent } from './nav/nav.component';
+
 // importing animation component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
-//  ==== ROUTER =======
-const appRoutes: Routes = [
-  { path: '', component: LandingComponent, data: {depth: 1}},
-  { path: 'tickets', component: TicketsComponent, data: {depth: 2}},
-  { path: 'form', component: UserFormComponent, data: {depth: 3}},
-  { path: 'checkout', component: CheckoutComponent, data: {depth: 4}},
-
-  //  home default path
-  { path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
-  }
-
-];
+// importing font-awesome
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -39,11 +26,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

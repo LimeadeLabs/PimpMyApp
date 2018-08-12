@@ -1,20 +1,19 @@
 <div class="container-fluid background">
   <div class="row test">
     <div class="col test2 float-left">
-      <img src="./assets/pimp-logo.png" alt="" class="logo">
+      <img src="./assets/pimp-logo.png" routerLink="/" class="logo">
       <div class="dynamic-content-wrapper row">
         <div class="col-lg-1 col-sm-12">
           <app-nav></app-nav>
         </div>
-        <div class="col-lg-11 col-sm-12 test4 routeContainer" [@routeAnimation]='getDepth(myOutlet)' >
-          <router-outlet #myOutlet="outlet"></router-outlet>
-          <button>test</button>
+        <div class="col-lg-11 col-sm-12 test4" >
+          <router-outlet></router-outlet>
         </div>
       </div>
     </div>
     <div class="container-fluid footer-bg">
       <div class="row">
-        <div class="col-sm-12 footer-img-wrapper">
+        <div class="col footer-img-wrapper">
             <img src="./assets/brought-to-you-by.png" class="btyb" alt="">
         </div>
       </div>

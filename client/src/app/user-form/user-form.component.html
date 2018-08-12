@@ -1,4 +1,26 @@
-<p>
-  user-form works!
-  <button class="btn-style"><a routerLink="/checkout">NEXT</a></button>
-</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h3>Final step! Secure your tickets</h3>
+        <p>Ticket X 17</p>
+        <h4>chances to win</h4>
+      </div>
+      <div class="col">
+        <form class="container form-wrapper">
+          <div class="row input-wrapper">
+            <h4 class="title">How many oportunites would you like to purchase?</h4>
+            <div class="quantity-wrapper">
+              <span class="quantity-btn">-</span>
+              <span class="numOutput">17</span>
+              <span class="quantity-btn">+</span>
+              <p class="totalOutput"><span>-</span>$85<span>-</span></p>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button routerLink="/checkout" class="btn-style">NEXT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
