@@ -28,15 +28,16 @@
 }
 
 .app-screen{
-    width: 400px;
+    width: 300px;
     margin-right: auto;
     margin-left: auto;
     padding-bottom: 50px;
 }
 
-/* .test3 {
-    border: 5px solid purple;
-} */
+.test3 {
+    /* margin-top: 10%; */
+    /* border: 5px solid purple; */
+}
 
 .text-wrapper {
     /* border: 5px solid blue; */
@@ -46,10 +47,12 @@
 
 h3{
     padding-top: 80px;
-    font-size: 4em;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 h2 {
     font-size: 1.2em;
+    font-weight: bold;
     color: #ff630f;
 }

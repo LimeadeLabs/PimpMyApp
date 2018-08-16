@@ -3,6 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
     /* background-color: #ffc16b; */
     /* height: 100vh; */
     /* border: 5px solid pink; */
@@ -10,8 +11,9 @@
 
 /* need to make this scale according to screen-size without getting too small */
 .logo {
-    width: 50em;
+    width: 50%;
     height: auto;
+    position: absolute;
     /* border: 5px solid black; */
 }
 
@@ -25,12 +27,14 @@
     border: 5px solid red;
 }
 
-.test4 {
-    border: 5px solid green;
-    padding: 40px;
-} */
 
 /* =========================== */
+
+.view-container {
+    margin-top: 20%;
+    border: 5px solid red;
+    position: relative;
+}
 
 .dynamic-content-wrapper {
     padding: 50px;
@@ -38,6 +42,7 @@
 
 .footer-bg {
     background: #471202;
+    /* height: 150px; */
 
 }
 

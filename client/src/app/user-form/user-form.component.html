@@ -1,21 +1,36 @@
 <div class="container-fluid">
     <div class="row">
-      <div class="col">
-        <h3>Final step! Secure your tickets</h3>
-        <p>Ticket X 17</p>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <h3>You're one step closer to getting 200 hours of devlopment work!</h3>
+        <i class="far fa-ticket-alt"></i><span> X 17</span>
         <h4>chances to win</h4>
       </div>
-      <div class="col">
+      <div class="col-sm-12 col-md-6 col-lg-6">
         <form class="container form-wrapper">
-          <div class="row input-wrapper">
-            <h4 class="title">How many oportunites would you like to purchase?</h4>
-            <div class="quantity-wrapper">
-              <span class="quantity-btn">-</span>
-              <span class="numOutput">17</span>
-              <span class="quantity-btn">+</span>
-              <p class="totalOutput"><span>-</span>$85<span>-</span></p>
+            <div class="input-wrapper">
+                <div class="input-padding">
+                    <div class="form-group">
+                        <label for="fullname">Full Name*</label>
+                        <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" >
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Contact Number*</label>
+                        <input type="text" class="form-control" id="number" aria-describedby="emailHelp" >
+                    </div>
+                    <div class="form-group">
+                        <label for="shout-out">Who would you like to give a Shoutout to?</label>
+                        <input type="text" class="form-control" id="shout-out" aria-describedby="emailHelp" >
+                    </div>
+                    <div class="form-group">
+                        <label for="advert">How did you hear about Pimp That App?</label>
+                        <input type="text" class="form-control" id="advert" aria-describedby="emailHelp" >
+                    </div>
+                </div>
             </div>
-          </div>
           <div class="btn-wrapper">
             <button routerLink="/checkout" class="btn-style">NEXT</button>
           </div>
