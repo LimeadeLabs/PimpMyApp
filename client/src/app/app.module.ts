@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
@@ -13,7 +13,7 @@ import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // importing font-awesome
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

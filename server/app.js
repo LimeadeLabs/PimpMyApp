@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+const cors = require('cors')
+// importing keys
+const keys = require('./config/keys');
 const app = express();
 
 // Need devloper key with Stripe API
-const stripe = require('stripe')('sk_test_r9vXV6r5uPUMolYeEFlKV7Vz');
+const stripe = require('stripe')(keys.stripeSecretKey);
 
 // Handlebars Middleware
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -18,29 +21,28 @@ app.use(bodyParser.urlencoded({extended: false}));
 // folder set as public will hold our images
 app.use(express.static(`${__dirname}/public`));
 
+app.use(cors())
 
 
-// Strip Config
-// stripe.customers.create(
-//   { email: 'customer@example.com' },
-//   function(err, customer) {
-//     err; // null if no error occurred
-//     customer; // the created customer object
-//   }
-// );
 
-// Routes
+// ======== ROUTES ==========
+
 app.get('/', (req, res) => {
     res.render('index');
 });
 
-// app.get('/', (req, res) => {
-//     res.render('success');
-// });
+
+// route to set publishable key
+app.get('/checkout', (req, res) => {
+    // assigning variable to contain key
+   const stripePublishableKey = keys.stripePublishableKey;
+    // sending key
+   res.json(stripePublishableKey);
+})
 
 // Charge route
-app.post('/charge', (req, res)=> {
-    const amount = 599;
+app.post('/checkout', (req, res)=> {
+    const amount = 500;
     stripe.customers.create({
         email: req.body.stripeEmail,
         source: req.body.stripeToken
@@ -107,6 +109,31 @@ app.post('/charge', (req, res)=> {
 //    console.log('charge here ' + charge.customer); //store the customer id
 
 //   }
+
+
+app.post("/charge", (req, res) => {
+    // setting amount to $5
+    let amount = 500;
+  
+    stripe.customers.create({
+        // retreives email address and card toekn from req.body
+      email: req.body.email,
+      card: req.body.id
+    })
+    .then(customer =>
+      stripe.charges.create({
+        amount,
+        description: "Sample Charge",
+        currency: "usd",
+        customer: customer.id
+      }))
+    .then(charge => res.send(charge))
+    .catch(err => {
+      console.log("Error:", err);
+      res.status(500).send({error: "Purchase Failed"});
+    });
+  });
+  
 
 // port on either Heroku or local 5000
 const port = process.env.PORT || 5000;
