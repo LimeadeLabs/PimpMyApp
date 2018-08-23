@@ -3,7 +3,8 @@ import { routeFadeStateTrigger } from '../animations/route-animations';
 // import { environment } from '../environments/environment';
 
 import { PaymentService } from '../services/payment.service';
-import {Observable} from 'rxjs';
+// import {Observable, Subscriber} from 'rxjs';
+// import { StripePubKey } from './interface/stripeKeyInterface';
 
 @Component({
   selector: 'app-checkout',
@@ -11,14 +12,15 @@ import {Observable} from 'rxjs';
   styleUrls: ['./checkout.component.css'],
   animations: [
     routeFadeStateTrigger
-  ]
+  ],
+  providers: [PaymentService]
 })
 export class CheckoutComponent implements OnInit {
   // binding the animation to the component
   @HostBinding('@routeFadeState') routeAnimation = true;
 
   // declare var StripeCheckout:any;
-  stripePubKey: any;
+  stripePubKey: string;
   name: string;
   billAdress: string;
   state: string;
@@ -26,18 +28,35 @@ export class CheckoutComponent implements OnInit {
   expiryMonth: string;
   expiryYear: string;
   cvc: string;
+  StripeCheckout;
 
 
-  constructor(private charge: PaymentService) { }
+  constructor(private _charge: PaymentService) { }
+
 
   ngOnInit() {
+
     // running getKey function from service
-    this.charge.getKey().subscribe(
-      res => this.stripePubKey = res
-      // console.log(this.stripePubKey)
-    )
-    console.log(this.stripePubKey);
+    console.log("initializing the service function");
+    this._charge.getKey();
+
+    // this.stripePubKey = this._charge.PubKey;
   }
+
+  extractkey(){
+    // settng variable for Stripe Pub key
+    this.stripePubKey = this._charge.PubKey;
+    // configuring custom Stripe form
+    const handler = this.StripeCheckout.congifure({
+      key: this.stripePubKey,
+      image: "",
+      locale: 'auto',
+      token: function(token) {
+      }
+    })
+  }
+
+
 
   onCheckout(){
     const paymentInfo = {
@@ -49,7 +68,18 @@ export class CheckoutComponent implements OnInit {
       expiryYear: this.expiryYear,
       cvc: this.cvc
 
+
     }
+
+
+
+
   }
 
+
+
 }
+
+
+
+
